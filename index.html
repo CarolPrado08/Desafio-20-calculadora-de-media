@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <title>Calculadora Notas </title>
+
+
+    <script>
+
+        function calcular(){
+         var n1 = parseInt(document.getElementById("nota_1").value);
+         var n2 = parseInt(document.getElementById("nota_2").value);
+         var n3 = parseInt(document.getElementById("nota_3").value);
+         
+
+        media = (n1 + n2 + n3) / 3 ;
+
+
+            let text = "";
+            if(media >= 6) {
+                text = `A média do aluno foi ${media}, e ele foi APROVADO na disciplina!`
+            }else{
+                text = `A média do aluno foi ${media}, e ele foi REPROVADO na disciplina!`
+            }
+         
+                document.getElementById("resp").innerHTML = text;
+         }
+    </script>
+
+    <style>
+        body{
+            background-image: url(img/8389401.jpg);
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            
+        }
+
+        .titulo1{
+            color: #93b9d0;
+            font-weight: bolder;
+            font-style: italic;
+            margin-top: 0;
+        }
+
+       #resp{
+        
+        font-size: 20px;
+        color: #000;
+        background-color: #d4d187;
+        border-radius: 15px;
+       
+       }
+
+        #container{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            text-align: center;
+            border-radius: 25px;
+            border: 3px solid black;
+            margin: auto;
+            margin-top: 120px;
+            width: 600px;
+            height: 450px;
+            padding-top: 45px ;
+            background-color: rgb(56, 71, 168);
+        }
+
+        #container label{
+
+            font-size: 35px;
+            color: #fff;
+        }
+
+        input{
+            width: 150px;
+            height: 30px;
+            margin: 0 auto;
+            border-radius: 25px;
+        }
+
+        .botao{
+            margin: 0 auto;
+            width: 100px;
+            border-radius: 25px;
+            font-size: 18px;
+
+        }
+
+    </style>
+
+</head>
+<body>
+     <div id="container">
+
+        <h1 class="titulo1">CALCULADORA DE NOTAS</h1>
+
+        <div id="resp"></div>
+
+        <label>Qual foi a primeira nota do aluno/a?</label>
+        <input type="number" id="nota_1">
+
+        <label>Qual foi a segunda nota do aluno/a?</label>
+        <input type="number" id="nota_2">
+
+        <label>Qual foi a terceira nota do aluno/a?</label>
+        <input type="number" id="nota_3">
+
+
+        <button class="botao" onclick="calcular()"> Calcular nota </button>
+    </div>
+
+   
+
+    
+</body>
+</html>
